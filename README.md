@@ -8,7 +8,7 @@ Una palabra jurídica de cinco letras por día, en hora de Uruguay. Proyecto ind
 - Avanzado: 6 intentos, sin pistas.
 - Difícil: 5 intentos; cada jugada debe respetar las pistas ya obtenidas, incluidas las cantidades de letras repetidas.
 
-Acepta tildes como equivalentes sin borrar la Ñ. Muestra definición y enlace a un artículo de Normativa al terminar, permite compartir una grilla sin revelar la solución y guarda el progreso de cada modo y las estadísticas solo en `localStorage` del navegador. El mismo término del día vale para todos los modos, y la fecha cambia a medianoche en Montevideo. La lista curada de soluciones rota; el vocabulario de intentos incluye más de mil términos de cinco letras del corpus publicado por Normativa.
+Acepta tildes como equivalentes sin borrar la Ñ. Muestra definición y enlace a un artículo de Normativa al terminar, permite compartir una grilla sin revelar la solución y guarda el progreso de cada modo y las estadísticas solo en `localStorage` del navegador. El mismo término del día vale para todos los modos, y la fecha cambia a medianoche en Montevideo. La lista curada de soluciones rota; el vocabulario de intentos combina los términos extraídos del corpus de Normativa con un diccionario general de palabras españolas de cinco letras. Las soluciones siguen siendo únicamente los 24 términos jurídicos seleccionados.
 
 ## Desarrollo
 
@@ -17,7 +17,7 @@ El sitio es HTML/CSS/JS estático y no tiene dependencias de ejecución. `npm te
 ### Fuentes del vocabulario
 
 - Normativa Uruguay: [API v1](https://lucasramos.uy/normativa/api/), datos [repositorio `normativa`, rama `api`](https://github.com/lucasramosuy/normativa/tree/api/data). Diccionario de soluciones revisado manualmente con enlaces a artículos concretos; las definiciones son orientativas, redactadas para el juego, no texto oficial de IMPO.
-- Intentos válidos: palabras de cinco letras extraídas del texto de Normativa, normalizadas para ignorar tildes. El diccionario excluye algunas palabras comunes que no aparezcan en ese corpus; puede ampliarse sin cambiar las respuestas.
+- Intentos válidos: unión de los términos de cinco letras del corpus de Normativa y [el diccionario español de cinco letras de Wordle-Solver](https://github.com/rodyuzuriaga/Wordle-Solver/blob/main/resources/5_caracteres/spanish_5.txt), normalizados para ignorar tildes sin borrar la Ñ. La fuente adicional está publicada bajo [licencia MIT](https://github.com/rodyuzuriaga/Wordle-Solver/blob/main/LICENSE), cuya copia está en `WORDLIST-LICENSE`. La lista de soluciones jurídicas no cambia.
 
 ## Límites conocidos
 
