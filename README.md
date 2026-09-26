@@ -17,7 +17,7 @@ El sitio es HTML/CSS/JS estático y no tiene dependencias de ejecución. `npm te
 ### Fuentes del vocabulario
 
 - Normativa Uruguay: [API v1](https://lucasramos.uy/normativa/api/), datos [repositorio `normativa`, rama `api`](https://github.com/lucasramosuy/normativa/tree/api/data). Diccionario de soluciones revisado manualmente con enlaces a artículos concretos; las definiciones son orientativas, redactadas para el juego, no texto oficial de IMPO.
-- Intentos válidos: unión de los términos de cinco letras del corpus de Normativa y [el diccionario español de cinco letras de Wordle-Solver](https://github.com/rodyuzuriaga/Wordle-Solver/blob/main/resources/5_caracteres/spanish_5.txt), normalizados para ignorar tildes sin borrar la Ñ. La fuente adicional está publicada bajo [licencia MIT](https://github.com/rodyuzuriaga/Wordle-Solver/blob/main/LICENSE), cuya copia está en `WORDLIST-LICENSE`. La lista de soluciones jurídicas no cambia.
+- Intentos válidos: unión de los términos de cinco letras del corpus de Normativa y [el diccionario español de cinco letras de Wordle-Solver](https://github.com/rodyuzuriaga/Wordle-Solver/blob/main/resources/5_caracteres/spanish_5.txt), normalizados para ignorar tildes sin borrar la Ñ. La fuente adicional está publicada bajo [licencia MIT](https://github.com/rodyuzuriaga/Wordle-Solver/blob/main/LICENSE), cuya copia está en `WORDLIST-LICENSE`. AEIOU se admite además como excepción pedida por Lucas para probar todas las vocales. La lista de soluciones jurídicas no cambia.
 
 ## Límites conocidos
 
