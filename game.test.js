@@ -1,5 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {clean,grade,constraints,dayKey,answerFor,MODES,valid,shareText} from './game.js';
 import {guesses as generalGuesses} from './1-data.js';
+import {answers} from './data.js';
 test('tildes flexibles, Ñ conservada',()=>{assert.equal(clean('áéíóú'),'AEIOU');assert.equal(clean('niño'),'NIÑO');assert.ok(valid('FUERO'));assert.ok(valid('árbol'))});
 test('palabras comunes fuera del corpus legal son intentos, no soluciones',()=>{assert.ok(valid('ABEJA'));assert.ok(valid('MANGO'));assert.ok(valid('PÁJAR'));assert.ok(valid('AÉREO'));assert.ok(valid('AUDIO'));assert.ok(valid('AEIOU'));assert.ok(!valid('ZZZZZ'));assert.ok(!valid('ABCDEF'))});
 test('la puntuación de letras repetidas no sobreasigna aciertos',()=>{assert.deepEqual(grade('PAPAS','PARTE'),[2,2,0,0,0]);assert.deepEqual(grade('ACTOR','FUERO'),[0,0,0,1,1]);assert.deepEqual(grade('FIRME','FUERO'),[2,0,1,0,1])});
@@ -8,3 +9,5 @@ test('modos y día uruguayo',()=>{assert.equal(MODES.facil.hints,2);assert.equal
 test('resultado compartido incluye grilla y URL',()=>{let s=shareText('2026-09-25','avanzado',['ACTOR','FUERO'],'FUERO');assert.match(s,/2\/6/);assert.match(s,/🟩🟩🟩🟩🟩/);assert.match(s,/https:\/\/lucasramos\.uy\/normativa\/leydle\//)});
 
 test('diccionario ampliado conserva intentos y excepción de las vocales',()=>{assert.equal(generalGuesses.size,12395);assert.ok(valid('ABEJA'));assert.ok(valid('AMPAY'));assert.ok(valid('VAMOS'));assert.ok(valid('AEIOU'));assert.ok(!valid('ZZZZZ'));assert.ok([...generalGuesses].every(w=>/^[A-ZÑ]{5}$/.test(w)))});
+
+test('banco de 96 respuestas jurídicas: distintas, aceptadas y con artículos',()=>{assert.equal(answers.length,96);assert.equal(new Set(answers.map(a=>a.word)).size,96);for(const a of answers){assert.match(a.word,/^[A-ZÑ]{5}$/);assert.ok(valid(a.word),a.word);assert.ok(a.category&&a.hint&&a.definition);assert.match(a.source,/^https:\/\/lucasramos\.uy\/normativa\/normas\/[a-z0-9-]+\/articulo\/[^/]+\/$/)}assert.equal(answerFor('2026-09-25').word,'FUERO');assert.equal(answerFor('2026-10-18').word,'LISTA');assert.equal(answerFor('2026-10-19').word,'AUTOS');assert.equal(answerFor('2026-12-30').word,'FUERO')});
