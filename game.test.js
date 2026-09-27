@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {clean,grade,constraints,dayKey,answerFor,MODES,valid,shareText} from './game.js';
+import test from 'node:test';import assert from 'node:assert/strict';import {clean,grade,constraints,dayKey,answerFor,MODES,valid,shareText,editGuess} from './game.js';
 import {guesses as generalGuesses} from './1-data.js';
 import {answers} from './data.js';
 test('tildes flexibles, Ñ conservada',()=>{assert.equal(clean('áéíóú'),'AEIOU');assert.equal(clean('niño'),'NIÑO');assert.ok(valid('FUERO'));assert.ok(valid('árbol'))});
@@ -11,3 +11,5 @@ test('resultado compartido incluye grilla y URL',()=>{let s=shareText('2026-09-2
 test('diccionario ampliado conserva intentos y excepción de las vocales',()=>{assert.equal(generalGuesses.size,12395);assert.ok(valid('ABEJA'));assert.ok(valid('AMPAY'));assert.ok(valid('VAMOS'));assert.ok(valid('AEIOU'));assert.ok(!valid('ZZZZZ'));assert.ok([...generalGuesses].every(w=>/^[A-ZÑ]{5}$/.test(w)))});
 
 test('banco de 96 respuestas jurídicas: distintas, aceptadas y con artículos',()=>{assert.equal(answers.length,96);assert.equal(new Set(answers.map(a=>a.word)).size,96);for(const a of answers){assert.match(a.word,/^[A-ZÑ]{5}$/);assert.ok(valid(a.word),a.word);assert.ok(a.category&&a.hint&&a.definition);assert.match(a.source,/^https:\/\/lucasramos\.uy\/normativa\/normas\/[a-z0-9-]+\/articulo\/[^/]+\/$/)}assert.equal(answerFor('2026-09-25').word,'FUERO');assert.equal(answerFor('2026-10-18').word,'LISTA');assert.equal(answerFor('2026-10-19').word,'AUTOS');assert.equal(answerFor('2026-12-30').word,'FUERO')});
+
+test('edición de letra intermedia y borrado desde selección o final',()=>{assert.equal(editGuess('CASAS','R',2),'CARAS');assert.equal(editGuess('CASAS','BORRAR',2),'CAAS');assert.equal(editGuess('CASAS','BORRAR'),'CASA');assert.equal(editGuess('CASAS','R'),'CASAS');assert.equal(editGuess('CAS','A'),'CASA')});
