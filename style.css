@@ -7,3 +7,23 @@
 .mobile-back{font-size:13px;font-weight:700;border-bottom:1px solid currentColor;padding:7px 0;line-height:1}
 
 button.tile{width:100%;padding:0;font:inherit;color:inherit;cursor:pointer}button.tile.selected{border-color:var(--teal);background:#e8f4ed;box-shadow:0 0 0 2px var(--teal);color:var(--ink)}
+
+/* On phones, keep the playable board and keyboard together in the viewport.
+   The rest of the page remains scrollable for the help text and footer. */
+@media(max-width:800px){
+  html,body{overscroll-behavior-y:none}
+  .mast{padding:10px 0 12px}
+  .mast .crumb,.mast .eyebrow{display:none}
+  .mast h1{font-size:38px}
+  .mast .sub{margin-top:3px;font-size:12px}
+  .mast .issue{margin-top:5px;padding:4px 7px;font-size:10px}
+  .main{padding-top:13px}
+  .play-head{margin-bottom:10px}
+  .mode-description{margin-bottom:9px}
+  .board{gap:4px;margin-bottom:8px}
+  .row{gap:4px}
+  .tile{height:clamp(28px,calc((100dvh - 490px - (var(--board-rows) - 1)*4px)/var(--board-rows)),44px);font-size:21px}
+  .status{margin-bottom:9px;min-height:16px}
+  .keyboard{gap:4px}
+  .key{height:38px}
+}
