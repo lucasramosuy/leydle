@@ -27,3 +27,17 @@ button.tile{width:100%;padding:0;font:inherit;color:inherit;cursor:pointer}butto
   .keyboard{gap:4px}
   .key{height:38px}
 }
+
+/* Botones en la identidad de Normativa (Buscar). */
+.mode-switch{gap:6px;background:transparent;border:0;padding:0}
+.mode{border:1px solid #cedbd5;border-radius:8px;background:#fffefa;color:#176b63;font-weight:700}
+.mode.active{border-color:#176b63;background:#176b63;color:white}
+.help{border-color:#cbd9d2;border-radius:8px;background:#fffefa;color:#176b63}
+.key{border:1px solid #ccd8d1;border-radius:8px;background:#f5f8f5;color:#176b63}
+.key.wide[data-key="ENVIAR"]{border-color:#176b63;background:#176b63;color:#fff;font-size:10px}
+.key.wide[data-key="BORRAR"]{border-color:#a9c7bd;background:#e7f2ed;color:#176b63;font-size:16px}
+.key.hit{border-color:#176b63;background:#176b63;color:#fff}
+.key.near{border-color:#e8c979;background:#e8c979;color:#23302d}
+.key.miss{border-color:#96a09b;background:#96a09b;color:#fff}
+@media(max-width:800px){.mode{padding:7px}.key{height:38px}}
+@media(max-width:800px){.keyrow:last-child .key.wide{flex:1.7;max-width:60px}.key.wide[data-key="ENVIAR"]{font-size:10px}}
