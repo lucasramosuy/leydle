@@ -1,1 +1,1 @@
-{"name":"leydle","version":"1.0.0","private":true,"type":"module","scripts":{"test":"node --test *.test.js","check":"npm test && node --check app.js && node --check game.js"}}
+{"name":"leydle","version":"1.0.0","private":true,"type":"module","scripts":{"test":"node --test *.test.js","check":"pnpm test && node --check app.js && node --check game.js"}}

@@ -25,4 +25,4 @@ Leydle es un juego diario de palabras jurídicas de cinco letras, en español, v
 
 - Entrega estática HTML/CSS/JavaScript sin dependencias de ejecución ni backend; ninguna credencial debe viajar al cliente. Despliegue previsto bajo `/normativa/leydle/`, con una regla de enrutamiento que preceda a `/normativa/` en el Worker del dominio. El merge del repositorio no publica por sí solo la ruta.
 - No prometer conservar datos al limpiar el almacenamiento del navegador ni compartir progreso entre dispositivos. La fecha depende del reloj del dispositivo, interpretado en hora uruguaya.
-- Mantener pruebas de la lógica de juego (`game.test.js`) y verificar `app.js`/`game.js` con el script `check` del repositorio antes de publicar cambios de reglas. Este repositorio usa scripts de Node sin instalación de dependencias; no se le atribuye una migración a pnpm que el código no tiene.
+- Mantener pruebas de la lógica de juego (`game.test.js`) y verificar `app.js`/`game.js` con el script `check` del repositorio antes de publicar cambios de reglas. El gestor de paquetes del repositorio es pnpm; las pruebas no requieren dependencias externas.
