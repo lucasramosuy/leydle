@@ -8,7 +8,7 @@ Una palabra jurídica de cinco letras por día, en hora de Uruguay. Proyecto ind
 - Avanzado: 6 intentos, sin pistas.
 - Difícil: 5 intentos; cada jugada debe respetar las pistas ya obtenidas, incluidas las cantidades de letras repetidas.
 
-Acepta tildes como equivalentes sin borrar la Ñ. Muestra definición y enlace a un artículo de Normativa al terminar, permite compartir una grilla sin revelar la solución y guarda el progreso de cada modo y las estadísticas solo en `localStorage` del navegador. El mismo término del día vale para todos los modos, y la fecha cambia a medianoche en Montevideo. La lista curada de soluciones rota; el vocabulario de intentos combina los términos extraídos del corpus de Normativa con un diccionario general de palabras españolas de cinco letras. Las soluciones siguen siendo únicamente los 24 términos jurídicos seleccionados.
+Acepta tildes como equivalentes sin borrar la Ñ. Muestra definición y enlace a un artículo de Normativa al terminar, permite compartir una grilla sin revelar la solución y guarda el progreso de cada modo y las estadísticas solo en `localStorage` del navegador. El mismo término del día vale para todos los modos, y la fecha cambia a medianoche en Montevideo. La lista curada de soluciones rota; el vocabulario de intentos combina los términos extraídos del corpus de Normativa con un diccionario general de palabras españolas de cinco letras. Las soluciones siguen siendo únicamente los 96 términos jurídicos seleccionados.
 
 ## Desarrollo
 
@@ -22,4 +22,4 @@ El sitio es HTML/CSS/JS estático y no tiene dependencias de ejecución. `npm te
 
 ## Límites conocidos
 
-La lista de soluciones inicial contiene 24 términos y luego rota; no promete un término nunca repetido. Las estadísticas viven solo en el dispositivo y se pierden al borrar datos del sitio. No hay récord global, registro de usuarios ni copia en servidor. El enlace del artículo muestra un uso del término en una norma publicada, no necesariamente una definición legal formal del concepto.
+La lista de soluciones contiene 96 términos (24 iniciales y 72 nuevos), conserva el orden inicial y luego rota cada 96 días; no promete un término nunca repetido. Las estadísticas viven solo en el dispositivo y se pierden al borrar datos del sitio. No hay récord global, registro de usuarios ni copia en servidor. El enlace del artículo muestra un uso del término en una norma publicada, no necesariamente una definición legal formal del concepto.
