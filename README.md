@@ -12,7 +12,7 @@ Acepta tildes como equivalentes sin borrar la Ñ. Muestra definición y enlace a
 
 ## Desarrollo
 
-El sitio es HTML/CSS/JS estático y no tiene dependencias de ejecución. `npm test` corre las pruebas; para probar manualmente: `python3 -m http.server 8000` y abrir `http://localhost:8000/`. Se puede publicar directamente como sitio estático desde la raíz del repositorio, detrás del router de `lucasramos.uy`. Los enlaces a los artículos apuntan al corpus publicado. La publicación bajo `/normativa/leydle/` necesita enrutar ese prefijo antes de la ruta general `/normativa/` en el Worker del dominio; fusionar este PR por sí solo no lo pone en producción.
+El sitio es HTML/CSS/JS estático y no tiene dependencias de ejecución. `pnpm test` corre las pruebas; para probar manualmente: `python3 -m http.server 8000` y abrir `http://localhost:8000/`. Se puede publicar directamente como sitio estático desde la raíz del repositorio, detrás del router de `lucasramos.uy`. Los enlaces a los artículos apuntan al corpus publicado. La publicación bajo `/normativa/leydle/` necesita enrutar ese prefijo antes de la ruta general `/normativa/` en el Worker del dominio; fusionar este PR por sí solo no lo pone en producción.
 
 ### Fuentes del vocabulario
 
