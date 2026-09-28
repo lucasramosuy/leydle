@@ -8,7 +8,7 @@ Una palabra jurídica de cinco letras por día, en hora de Uruguay. Proyecto ind
 - Avanzado: 6 intentos, sin pistas.
 - Difícil: 5 intentos; cada jugada debe respetar las pistas ya obtenidas, incluidas las cantidades de letras repetidas.
 
-Acepta tildes como equivalentes sin borrar la Ñ. Muestra definición y enlace a un artículo de Normativa al terminar, permite compartir una grilla sin revelar la solución y guarda el progreso de cada modo y las estadísticas solo en `localStorage` del navegador. El mismo término del día vale para todos los modos, y la fecha cambia a medianoche en Montevideo. La lista curada de soluciones rota; el vocabulario de intentos combina los términos extraídos del corpus de Normativa con un diccionario general de palabras españolas de cinco letras. Las soluciones siguen siendo únicamente los 96 términos jurídicos seleccionados.
+Acepta tildes como equivalentes sin borrar la Ñ. Muestra definición y enlace a un artículo de Normativa al terminar, permite compartir el resultado como imagen vertical para historias generada en el dispositivo, o como grilla de texto sin revelar la solución y guarda el progreso de cada modo y las estadísticas solo en `localStorage` del navegador. El mismo término del día vale para todos los modos, y la fecha cambia a medianoche en Montevideo. La lista curada de soluciones rota; el vocabulario de intentos combina los términos extraídos del corpus de Normativa con un diccionario general de palabras españolas de cinco letras. Las soluciones siguen siendo únicamente los 96 términos jurídicos seleccionados.
 
 ## Desarrollo
 
