@@ -41,3 +41,21 @@ button.tile{width:100%;padding:0;font:inherit;color:inherit;cursor:pointer}butto
 .key.miss{border-color:#96a09b;background:#96a09b;color:#fff}
 @media(max-width:800px){.mode{padding:7px}.key{height:38px}}
 @media(max-width:800px){.keyrow:last-child .key.wide{flex:1.7;max-width:60px}.key.wide[data-key="ENVIAR"]{font-size:10px}}
+
+/* Compartir resultado como imagen (patrón Fotograma) */
+.overlay[hidden]{display:none}
+.action.ghost{background:transparent;color:var(--teal);border:1px solid #b9d7d0;margin-left:8px}
+.share-note{font-size:12px;line-height:1.5;color:#72818e;margin:12px 0 0}
+.share-fallback{background:#f0f1ed;border:1px solid var(--line);border-radius:6px;padding:12px;font-size:13px;white-space:pre-wrap;user-select:all}
+.story-dialog{max-width:560px}
+.story-frame{background:#f0f1ed;border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;place-items:center;margin:4px 0 16px}
+.story-frame img{display:block;width:min(100%,300px);height:auto;box-shadow:0 12px 30px #202b2926}
+.story-actions{display:flex;gap:8px}
+.story-actions .action{margin-top:0;flex:1;text-align:center}
+.story-actions .action[hidden]{display:none}
+@media(max-width:800px){
+.action.ghost{margin-left:0;margin-top:8px}
+.result .action{width:100%}
+.story-actions{flex-direction:column}
+.story-frame img{width:min(100%,250px)}
+}
