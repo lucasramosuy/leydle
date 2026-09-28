@@ -1,6 +1,6 @@
 # Especificación de requisitos de software: Leydle
 
-**Estado:** refleja el código de `main` al 27/09/2026. Describe el producto existente; no aprueba funciones futuras.
+**Estado:** refleja el código de `main` al 28/09/2026. Describe el producto existente; no aprueba funciones futuras.
 
 ## Propósito y alcance
 
@@ -8,7 +8,7 @@ Leydle es un juego diario de palabras jurídicas de cinco letras, en español, v
 
 ## Requisitos funcionales
 
-- **RF-01. Partida diaria:** elegir una sola respuesta para cada fecha en `America/Montevideo`, igual en los tres modos. Cambiar la partida al llegar un nuevo día en esa zona horaria, incluso si la página sigue abierta. Las 24 respuestas curadas rotan, por lo que pueden repetirse.
+- **RF-01. Partida diaria:** elegir una sola respuesta para cada fecha en `America/Montevideo`, igual en los tres modos. Cambiar la partida al llegar un nuevo día en esa zona horaria, incluso si la página sigue abierta. Las 96 respuestas curadas rotan, por lo que pueden repetirse.
 - **RF-02. Modos:** permitir Fácil (8 intentos, pistas de materia y orientación), Avanzado (6 intentos, sin pistas) y Difícil (5 intentos, sin pistas). Cada modo conserva su propia partida del día.
 - **RF-03. Jugadas:** aceptar entradas de cinco letras presentes en los vocabularios incorporados o la excepción `AEIOU`; normalizar mayúsculas y tildes sin confundir Ñ con N. Informar los rechazos sin consumir un intento.
 - **RF-04. Evaluación:** marcar por posición letras acertadas, presentes en otra posición o ausentes; consumir correctamente las ocurrencias en palabras con letras repetidas. En Difícil, cada nueva jugada debe respetar posiciones y cantidades de letras ya reveladas.
