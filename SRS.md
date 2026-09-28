@@ -13,13 +13,13 @@ Leydle es un juego diario de palabras jurídicas de cinco letras, en español, v
 - **RF-03. Jugadas:** aceptar entradas de cinco letras presentes en los vocabularios incorporados o la excepción `AEIOU`; normalizar mayúsculas y tildes sin confundir Ñ con N. Informar los rechazos sin consumir un intento.
 - **RF-04. Evaluación:** marcar por posición letras acertadas, presentes en otra posición o ausentes; consumir correctamente las ocurrencias en palabras con letras repetidas. En Difícil, cada nueva jugada debe respetar posiciones y cantidades de letras ya reveladas.
 - **RF-05. Resultado:** al ganar o agotar intentos, mostrar la palabra, su definición orientativa y un enlace al artículo publicado en Normativa. No presentar esa definición como texto oficial de IMPO.
-- **RF-06. Compartir:** generar una grilla de colores, fecha, modo e intentos sin revelar la respuesta; usar la función nativa de compartir cuando exista y, si no, el portapapeles.
+- **RF-06. Compartir:** generar en el dispositivo, con Canvas y sin backend, una imagen vertical de 1080 × 1920 para historias con la identidad de Leydle (palabra del día, Nº de edición, modo, puntaje y grilla de intentos), con vista previa, descarga y Web Share API de archivos donde exista. Mantener como alternativa la copia de texto con grilla de emojis, fecha, modo e intentos sin revelar la respuesta, al portapapeles o con selección manual si falla.
 - **RF-07. Persistencia local:** guardar filas por fecha y modo y resultados/racha en `localStorage`; validar los datos al recuperarlos y continuar sin persistencia cuando el navegador la bloquee. Las estadísticas son del dispositivo, no de una cuenta.
 - **RF-08. Interacción:** admitir teclado físico y teclado en pantalla; ofrecer instrucciones, estadísticas y etiquetas accesibles para tablero, controles y estado.
 
 ## Datos e integraciones
 
-`data.js` define respuestas (`word`, `category`, `hint`, `definition`, `source`) e intentos legales; `1-data.js` aporta el vocabulario general. `game.js` contiene reglas y persistencia, `app.js` la interfaz. Claves locales: `leydle:v1:<fecha>:<modo>` con `{rows}` y `leydle:v1:results` con resultados por `<fecha>:<modo>`. Los enlaces de fuente dependen de URLs de artículos publicados en Normativa; el juego no consulta la API en tiempo de ejecución. Las fuentes y licencias del vocabulario están detalladas en el README y en `WORDLIST-LICENSE` y `SPANISH-WORDLIST-LICENSE`.
+`data.js` define respuestas (`word`, `category`, `hint`, `definition`, `source`) e intentos legales; `1-data.js` aporta el vocabulario general. `game.js` contiene reglas y persistencia, `app.js` la interfaz y `story.js` el dibujo de la imagen de resultado. Claves locales: `leydle:v1:<fecha>:<modo>` con `{rows}` y `leydle:v1:results` con resultados por `<fecha>:<modo>`. Los enlaces de fuente dependen de URLs de artículos publicados en Normativa; el juego no consulta la API en tiempo de ejecución. Las fuentes y licencias del vocabulario están detalladas en el README y en `WORDLIST-LICENSE` y `SPANISH-WORDLIST-LICENSE`.
 
 ## Restricciones y calidad
 
