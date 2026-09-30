@@ -13,3 +13,14 @@ test('diccionario ampliado conserva intentos y excepción de las vocales',()=>{a
 test('banco de 96 respuestas jurídicas: distintas, aceptadas y con artículos',()=>{assert.equal(answers.length,96);assert.equal(new Set(answers.map(a=>a.word)).size,96);for(const a of answers){assert.match(a.word,/^[A-ZÑ]{5}$/);assert.ok(valid(a.word),a.word);assert.ok(a.category&&a.hint&&a.definition);assert.match(a.source,/^https:\/\/lucasramos\.uy\/normativa\/normas\/[a-z0-9-]+\/articulo\/[^/]+\/$/)}assert.equal(answerFor('2026-09-25').word,'FUERO');assert.equal(answerFor('2026-10-18').word,'LISTA');assert.equal(answerFor('2026-10-19').word,'AUTOS');assert.equal(answerFor('2026-12-30').word,'FUERO')});
 
 test('edición de letra intermedia y borrado desde selección o final',()=>{assert.equal(editGuess('CASAS','R',2),'CARAS');assert.equal(editGuess('CASAS','BORRAR',2),'CAAS');assert.equal(editGuess('CASAS','BORRAR'),'CASA');assert.equal(editGuess('CASAS','R'),'CASAS');assert.equal(editGuess('CAS','A'),'CASA')});
+
+test('grilla compartida exacta: victoria, derrota y sin revelar palabra ni fuente',()=>{
+ const win=shareText('2026-09-30','avanzado',['PLAZO','FALLO','CULPA'],'CULPA');
+ assert.equal(win,'Leydle 2026-09-30 · Avanzado 3/6\n🟨🟨🟨⬛⬛\n⬛🟨🟩⬛⬛\n🟩🟩🟩🟩🟩\nhttps://lucasramos.uy/normativa/leydle/');
+ for(const mode of Object.keys(MODES)){
+ const loss=shareText('2026-09-30',mode,Array(MODES[mode].attempts).fill('PLAZO'),'CULPA');
+ assert.ok(loss.includes(`X/${MODES[mode].attempts}`));
+ assert.equal(loss.split('\n').slice(1,-1).length,MODES[mode].attempts);
+ assert.ok(!loss.includes('CULPA'));assert.ok(!loss.includes('/articulo/'));
+ }
+});

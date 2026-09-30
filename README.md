@@ -8,7 +8,7 @@ Una palabra jurídica de cinco letras por día, en hora de Uruguay. Proyecto ind
 - Avanzado: 6 intentos, sin pistas.
 - Difícil: 5 intentos; cada jugada debe respetar las pistas ya obtenidas, incluidas las cantidades de letras repetidas.
 
-Acepta tildes como equivalentes sin borrar la Ñ. Muestra definición y enlace a un artículo de Normativa al terminar, permite compartir el resultado como imagen vertical para historias generada en el dispositivo, o como grilla de texto sin revelar la solución y guarda el progreso de cada modo y las estadísticas solo en `localStorage` del navegador. El mismo término del día vale para todos los modos, y la fecha cambia a medianoche en Montevideo. La lista curada de soluciones rota; el vocabulario de intentos combina los términos extraídos del corpus de Normativa con un diccionario general de palabras españolas de cinco letras. Las soluciones siguen siendo únicamente los 96 términos jurídicos seleccionados.
+Acepta tildes como equivalentes sin borrar la Ñ. Muestra definición y enlace a un artículo de Normativa al terminar, permite compartir el resultado como imagen vertical para historias generada en el dispositivo, o como grilla de emojis sin revelar la solución mediante el menú nativo de compartir o el portapapeles y guarda el progreso de cada modo y las estadísticas solo en `localStorage` del navegador. El mismo término del día vale para todos los modos, y la fecha cambia a medianoche en Montevideo. La lista curada de soluciones rota; el vocabulario de intentos combina los términos extraídos del corpus de Normativa con un diccionario general de palabras españolas de cinco letras. Las soluciones siguen siendo únicamente los 96 términos jurídicos seleccionados.
 
 ## Desarrollo
 
@@ -23,3 +23,9 @@ El sitio es HTML/CSS/JS estático y no tiene dependencias de ejecución. `pnpm t
 ## Límites conocidos
 
 La lista de soluciones contiene 96 términos (24 iniciales y 72 nuevos), conserva el orden inicial y luego rota cada 96 días; no promete un término nunca repetido. Las estadísticas viven solo en el dispositivo y se pierden al borrar datos del sitio. No hay récord global, registro de usuarios ni copia en servidor. El enlace del artículo muestra un uso del término en una norma publicada, no necesariamente una definición legal formal del concepto.
+
+## Resultado y difusión
+
+Al terminar una partida, la página lleva el foco a la tarjeta de resultado. La fuente se presenta con nombre de la norma y número de artículo, y la grilla queda visible. "Compartir resultado" abre el menú del dispositivo cuando existe Web Share API. "Copiar cuadraditos" copia fecha, dificultad, puntaje, emojis y enlace al juego, sin palabra ni enlace al artículo para no revelar la solución. Si falla el portapapeles aparece un campo seleccionable. Cancelar el menú no copia nada ni muestra errores. La imagen para historias sigue disponible como opción aparte; esa imagen sí muestra la solución.
+
+Los nombres cortos de las normas que usa la tarjeta se cotejaron con el catálogo público de Normativa. La lectura del artículo ocurre solo al abrir su enlace: no se agrega una consulta de red al juego.

@@ -59,3 +59,22 @@ button.tile{width:100%;padding:0;font:inherit;color:inherit;cursor:pointer}butto
 .story-actions{flex-direction:column}
 .story-frame img{width:min(100%,250px)}
 }
+
+/* Resultado: la grilla y la fuente quedan visibles al cerrar la partida. */
+.result-source{border-top:1px solid #c9dcd4;border-bottom:1px solid #c9dcd4;padding:16px 0;margin-top:18px;text-decoration:none}
+.result-source .side-label,.source-title,.source-note{display:block}
+.source-title{margin:7px 0;line-height:1.5}
+.source-note{font-size:12px;font-weight:400;line-height:1.5;color:#52646a}
+.result-share{margin-top:20px}
+.result .share-summary{font-size:12px;margin:8px 0 14px}
+.share-grid{font-family:system-ui,"Apple Color Emoji","Segoe UI Emoji",sans-serif;font-size:22px;line-height:1.55;letter-spacing:2px;margin:0 0 16px;white-space:pre}
+.result-actions{display:flex;gap:8px;flex-wrap:wrap}
+.result-actions .action{flex:1;margin:0;min-height:44px}
+.result-actions .action[hidden]{display:none}
+.image-option{background:none;border:0;padding:12px 0;color:var(--teal);font:inherit;font-size:12px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:44px;text-align:left}
+.result textarea.share-fallback{display:block;width:100%;box-sizing:border-box;font-family:inherit;line-height:1.7;resize:vertical;color:var(--teal)}
+@media(max-width:800px){.result-actions{flex-direction:column}.share-grid{font-size:22px}.result{padding:18px}}
+
+.share-grid{display:grid;gap:5px}.share-grid-row{display:flex;gap:5px}.share-square{width:23px;height:23px;border-radius:3px}.share-square.hit{background:#4b8c70}.share-square.near{background:#c6a44c}.share-square.miss{background:#7b8782}
+
+.result{scroll-margin-top:20px}.result:focus{outline:none}.action:focus-visible,.image-option:focus-visible,.result-source:focus-visible{outline:2px solid var(--teal);outline-offset:4px}
